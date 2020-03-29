@@ -155,22 +155,17 @@ start1 = graph1.get_vertex_by_label(1)
 end1 = graph1.get_vertex_by_label(4)
 graph2 = graphreader('simplegraph2.txt')
 start2 = graph2.get_vertex_by_label(1)
-end2 = graph2.get_vertex_by_label(5)
+end2 = graph2.get_vertex_by_label(10)
 
-graph_path = Dijkstra(graph1, start1, end1)
+graph_path = {v: k for k, v in Dijkstra(graph1, start1, end1).items()}
 #graph_path2 = Dijkstra(graph2, start2, end2)
-print("PATH OF GRAPH 1 (VERTEX -> PREDECESSOR)")
-for key in graph_path:
-    try:
-        print(str(key) + ' -> (' + str(graph_path[key][0]) + ", " + str(graph_path[key][1]._value) + ')')
-    except:
-        print(str(key) + ' -> (' + str(graph_path[key][0]) + ", " + str(graph_path[key][1]) + ')')
+graph_path.pop(start1)
+print("Path from vertex " + str(start1._element)+ " to " + str(end1._element) + " in Graph 1")
+#for key in graph_path:
 
 '''
-print("PATH OF GRAPH 2")
-for key in graph_path2:
-    try:
-        print(str(key) + ' -> (' + str(graph_path2[key][0]) + ", " + str(graph_path2[key][1]._value) + ')')
-    except:
-        print(str(key) + ' -> (' + str(graph_path2[key][0]) + ", " + str(graph_path2[key][1]) + ')')
+try:
+    print(str(key) + ' -> (' + str(graph_path[key][0]) + ", " + str(graph_path[key][1]._value) + ')')
+except:
+    print(str(key) + ' -> (' + str(graph_path[key][0]) + ", " + str(graph_path[key][1]) + ')')
 '''
