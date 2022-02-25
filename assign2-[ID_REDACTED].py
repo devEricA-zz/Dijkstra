@@ -419,7 +419,7 @@ class AdaptablePriorityQueue:
         # pop the last element
         self._elemList.pop()
         # if swap key < parent, bubble up
-        if self._elemList[element._index]._key < self._elemList[(i-1) // 2]._key:
+        if self._elemList[element._index]._key < self._elemList[(element._index-1) // 2]._key:
             self.bubbleup(element._index)
         # else bubble down
         else:
