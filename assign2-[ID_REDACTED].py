@@ -21,8 +21,7 @@ g. Repeat b-f until all vertices are closed
 3. An adaptable priority queue is a queue where the priority of its elements
 undergo changes. We would use it in Dijkstra's algorithm by using it to store all open
 vertices, giving priority to the vertices with the lowest cost. The APQ
-implementation would be best for use in Dijkstra in application to standard
-road maps would be the heap APQ implementation.
+implementation that is best for use on standard road maps is the heap APQ implementation.
 '''
 #Vertex, edge, and graph definitions
 class Vertex:
@@ -420,7 +419,7 @@ class AdaptablePriorityQueue:
         # pop the last element
         self._elemList.pop()
         # if swap key < parent, bubble up
-        if self._elemList[element._index]._key < self._elemList[(i-1) // 2]._key:
+        if self._elemList[element._index]._key < self._elemList[(element._index-1) // 2]._key:
             self.bubbleup(element._index)
         # else bubble down
         else:
@@ -590,8 +589,8 @@ graph_paths2 = Dijkstra(graph2, start2)
 
 # Printing the paths
 print("Shortest paths of graph 1 starting from vertex %d" % start1._element)
-print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex)")
+print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex))")
 print_path(graph_paths)
 print("Shortest paths of graph 2 starting from vertex %d" % start2._element)
-print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex)")
+print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex))")
 print_path(graph_paths2)
