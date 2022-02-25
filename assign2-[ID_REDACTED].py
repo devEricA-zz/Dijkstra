@@ -21,7 +21,7 @@ g. Repeat b-f until all vertices are closed
 3. An adaptable priority queue is a queue where the priority of its elements
 undergo changes. We would use it in Dijkstra's algorithm by using it to store all open
 vertices, giving priority to the vertices with the lowest cost. The APQ
-implementation that is best for use in standard road maps would be the heap APQ implementation.
+implementation that is best for use on standard road maps is the heap APQ implementation.
 '''
 #Vertex, edge, and graph definitions
 class Vertex:
