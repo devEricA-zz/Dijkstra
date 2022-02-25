@@ -589,8 +589,8 @@ graph_paths2 = Dijkstra(graph2, start2)
 
 # Printing the paths
 print("Shortest paths of graph 1 starting from vertex %d" % start1._element)
-print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex)")
+print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex))")
 print_path(graph_paths)
 print("Shortest paths of graph 2 starting from vertex %d" % start2._element)
-print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex)")
+print("Format is: (Vertex) -> ((Vertex Path Cost), (Previous Vertex))")
 print_path(graph_paths2)
